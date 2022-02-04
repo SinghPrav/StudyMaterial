@@ -14,8 +14,9 @@ public class StreamMap {
         userList.add(new User(2,"second", "sec@gmi.co"));
         userList.stream().map(user-> new UserCopy(user.getId(), user.getName(), user.email))
                 .forEach(userCopy -> System.out.println(userCopy));
-
-
+    System.out.println("****************");
+        userList.stream().map(user-> user.email)
+                .forEach(userCopy -> System.out.println(userCopy));
 
     }
 

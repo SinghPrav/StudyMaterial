@@ -8,7 +8,7 @@ public class ClientTest {
 
         System.out.println(Thread.currentThread().getName() + " has started");
 
-        CyclicBarrier barrier = new CyclicBarrier(2);
+        CyclicBarrier barrier = new CyclicBarrier(4);
 
         PassengerThread p1 = new PassengerThread(1000, barrier, "First");
         PassengerThread p2 = new PassengerThread(2000, barrier, "Second");

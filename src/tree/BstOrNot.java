@@ -15,7 +15,7 @@ public class BstOrNot {
         BstOrNot bstOrNot = new BstOrNot();
         TreeNode root = null;
         root = bstOrNot.insertTree(root);
-       if(bstOrNot.isBST(root)){
+       if(bstOrNot.isBst(root)){
            System.out.println("----- bst---");
        }else{
            System.out.println("----- Not Bst---");
@@ -23,22 +23,24 @@ public class BstOrNot {
 
     }
 
-    boolean isBST(TreeNode root)  {
-        return isBSTUtil(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
-    }
-    boolean isBSTUtil(TreeNode node, int min, int max)
-    {
-        /* an empty tree is BST */
-        if (node == null)
-            return true;
+     TreeNode prev = null;
+   boolean isBst(TreeNode root){
+        if(root == null)
+        {
+            return  true;
+        }
 
-        /* false if this node violates the min/max constraints */
-        if (node.val < min || node.val > max)
+        if(!isBst(root.left)){
             return false;
+        }
 
-        /* otherwise check the subtrees recursively
-        tightening the min/max constraints */
-        // Allow only distinct values
-        return (isBSTUtil(node.left, min, node.val-1) && isBSTUtil(node.right, node.val+1, max));
-    }
+        if(prev != null && root.val < prev.val ){
+            return  false;
+        }
+
+        prev = root;
+
+        return isBst(root.right);
+   }
+
 }

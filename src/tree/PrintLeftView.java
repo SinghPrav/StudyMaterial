@@ -31,8 +31,13 @@ public class PrintLeftView {
     void showLeftView(TreeNode root)
     {
         List<TreeNode> list = new ArrayList<>();
-        leftView(root, list, 0);
-        list.forEach(i-> System.out.print(i.val+" "));
+        TreeMap<Integer, TreeNode> map = new TreeMap<>();
+       // leftView(root, list, 0);
+        leftViewWithMap(root, map, 0);
+        for(Map.Entry<Integer,TreeNode> test: map.entrySet()){
+            System.out.print(test.getValue().val+ " ");
+        }
+      //  list.forEach(i-> System.out.print(i.val+" "));
         System.out.println("***************Right view *******");
         showRightView(root);
 
@@ -47,6 +52,15 @@ public class PrintLeftView {
         }
         leftView(root.left, list, level+1);
         leftView(root.right, list, level+1);
+    }
+
+    public void leftViewWithMap(TreeNode root, TreeMap<Integer, TreeNode> map, int level){
+        if(root == null){
+            return ;
+        }
+        map.putIfAbsent(level, root);
+        leftViewWithMap(root.left, map, level+1);
+        leftViewWithMap(root.right, map, level+1);
     }
 
     void showRightView(TreeNode root)

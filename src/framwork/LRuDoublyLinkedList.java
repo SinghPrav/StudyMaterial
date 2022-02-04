@@ -12,15 +12,14 @@ public class LRuDoublyLinkedList {
         DLinkedNode next;
     }
 
-    private void addNode(DLinkedNode node){
+    private void addNode(DLinkedNode node) {
         node.prev = head;
         node.next = head.next;
         head.next.prev = node;
         head.next = node;
-
     }
 
-    private void removeNode(DLinkedNode node){
+    private void removeNode(DLinkedNode node) {
         DLinkedNode prev = node.prev;
         DLinkedNode  next = node.next;
         prev.next = next;
@@ -32,7 +31,7 @@ public class LRuDoublyLinkedList {
         addNode(node);
     }
 
-    private DLinkedNode popTail(){
+    private DLinkedNode popTail() {
         DLinkedNode res = tail.prev;
         removeNode(res);
         return res;
@@ -49,8 +48,8 @@ public class LRuDoublyLinkedList {
     public LRuDoublyLinkedList(int capacity) {
         this.size = 0;
         this.capacity = capacity;
-        head = new DLinkedNode();
 
+        head = new DLinkedNode();
         tail = new DLinkedNode();
 
         head.next = tail;

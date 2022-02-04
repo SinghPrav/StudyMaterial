@@ -32,7 +32,6 @@ public class PrintVerticalView {
     void showVerticalView(TreeNode root)
     {
         TreeMap<Integer, List<TreeNode>> map = new TreeMap<>();
-        Values val = new Values();
         verticalView(root, map, 0);
         for(List<TreeNode> list: map.values()){
             for(TreeNode node : list) {
@@ -46,12 +45,12 @@ public class PrintVerticalView {
         if(root == null){
             return ;
         }
-        List<TreeNode> check = map.get(step);
+       /* List<TreeNode> check = map.get(step);
         if (check == null || check.size() <= 0) {
             check = new ArrayList<>();
         }
         check.add(root);
-        map.putIfAbsent(step, check);
+        map.putIfAbsent(step, check);*/
         map.computeIfAbsent(step, k-> new ArrayList<>()).add(root);
         verticalView(root.left, map, step-1);
         verticalView(root.right, map, step+1);

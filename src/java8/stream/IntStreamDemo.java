@@ -10,5 +10,11 @@ public class IntStreamDemo {
                         System.out.println(i);
                 });
 
+        IntStream.range(1,5)
+                .mapToObj(i-> i%3 == 0? "Yes":"No")
+                .forEach(i->{
+                    System.out.println(i);
+                });
+
     }
 }

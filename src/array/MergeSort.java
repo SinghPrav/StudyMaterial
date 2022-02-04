@@ -12,6 +12,7 @@ public class MergeSort {
 
         System.out.println("\nSorted array-> Swap " + count);
         printArray(arr);
+
     }
 
     static void printArray(int arr[]){

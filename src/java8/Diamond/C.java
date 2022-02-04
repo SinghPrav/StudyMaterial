@@ -12,10 +12,17 @@ public class C implements A, B{
         B.super.check();
     }
 
-    public static void testStatic(){
+    public  void testStat(){
         System.out.println("***********Parent Static C");
     }
+
     public  void testOver(){
+        testStat();
         System.out.println("***********testOver C");
+    }
+
+    public  void testCheck(int i){
+        testStat();
+        System.out.println("***********testOver with value C");
     }
 }

@@ -17,7 +17,7 @@ public class MajorityElementArray {
         Arrays.sort(a);
         int flag = 0;
         for(int i=1;i< a.length;i++){
-            if(temp == a[0]){
+            if(temp == a[i]){
                 count++;
             }else {
                 count = 1;

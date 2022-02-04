@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class LongestSubstring {
     public static void main(String[] args) {
-       String s ="abcabcbb";
+       String s ="abcabccb";
             int i = 0, j = 0, max = 0;
             Set<Character> set = new HashSet<>();
 

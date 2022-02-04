@@ -47,17 +47,13 @@ public class CloneLinkList {
             System.out.print(old_main.val+"->");
             old_main = old_main.next;
         }
+        System.out.println();
     }
 
     static void push(int item){
-        if(head == null){
-            head = new CloneLinkList.Node(item);
-            return;
-        }
-        CloneLinkList.Node node = new CloneLinkList.Node(item);
-        node.next = head;
-        head = node;
-
+        Node new_node = new Node(item);
+        new_node.next = head;
+        head = new_node;
     }
     static void printList(){
         Node temp = head;
@@ -68,12 +64,33 @@ public class CloneLinkList {
     }
 
     public static void main(String[] args) {
-        int arr1[] = { 1, 2, 3, 4};
+      /*  int arr1[] = { 1, 2, 3, 4};
         int size1 = 4;
         for(int i = size1 - 1; i >= 0; --i)
-            push(arr1[i]);
+            push(arr1[i]);*/
+
+
+        CloneLinkList list = new CloneLinkList();
+        list.push(5);
+        list.push(4);
+        list.push(3);
+        list.push(2);
+        list.push(1);
+
+        // Setting up random references.
+        list.head.random = list.head.next.next;
+        list.head.next.random =
+                list.head.next.next.next;
+        list.head.next.next.random =
+                list.head.next.next.next.next;
+        list.head.next.next.next.random =
+                list.head.next.next.next.next.next;
+        list.head.next.next.next.next.random =
+                list.head.next;
+
+
 
         copyRandomList(head);
-       // printList();
+        printList();
     }
 }

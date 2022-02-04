@@ -18,13 +18,11 @@ public class CountOfEachCharOccurence {
             }
         }
 
-        Iterator iterator = map.entrySet().iterator();
-        while (iterator.hasNext()){
-            Map.Entry mapElement = (Map.Entry)iterator.next();
-            int value = ((int)mapElement.getValue());
-            Character key = ((Character)mapElement.getKey());
+        Iterator<Map.Entry<Character, Integer>> itr = map.entrySet().iterator();
+        while (itr.hasNext()){
+            int value = itr.next().getValue();
+            Character key = itr.next().getKey();
             System.out.println(key+"========="+value);
-
         }
 
     }

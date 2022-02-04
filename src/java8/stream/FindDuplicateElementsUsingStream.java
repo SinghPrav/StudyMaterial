@@ -26,5 +26,8 @@ public class FindDuplicateElementsUsingStream {
                 .collect(Collectors.toSet());
 
         duplicateLanguages.forEach(System.out::println);
+        System.out.println("**********Dupt***");
+        Set<String> dup = languages.stream().filter(language -> !uniqueLanguages.add(language)).collect(Collectors.toSet());
+        dup.forEach(System.out::println);
     }
 }

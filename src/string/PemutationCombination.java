@@ -4,22 +4,26 @@ public class PemutationCombination {
     public static void main(String[] args) {
         String a = "abc";
         permute(a, 0, a.length()-1);
+
     }
 
-    /*
-    *                  A  B   C
+    /*          level  0  1   2
+    *                  A  B   C                  level-0
     *
-    *          A B C       B A C   C B A
+    *          A (B C)   B (A C)   C (B A)              level- 1
     *
-    *       A B C, A C B   B A C, B C A    C B A, C A B
+    *       A B (C), A C (B)   B A (C), B C (A)    C B (A), C A (B)  level-2
     *
     *
     *
     * */
 
 
+
+
     private static void permute(String str, int l, int r)
     {
+
         if (l == r)
             System.out.println(str);
         else

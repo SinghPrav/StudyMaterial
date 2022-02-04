@@ -31,7 +31,7 @@ public class SpiralForm {
         SpiralForm spiralForm = new SpiralForm();
         root = spiralForm.insertTree(root);
         System.out.println("Spiral traversal is:  ");
-        List<List<Integer>> list = spiralForm.getSpiralFormFromDqueue(root);
+        List<List<Integer>> list = spiralForm.getSpiralForm(root);
         for(int i=0;i<list.size();i++){
             List<Integer> element = list.get(i);
             System.out.print("[");
