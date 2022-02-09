@@ -9,8 +9,8 @@ public class C {
         B b = new B();
         b.overrideThisMethod();
         System.out.println("****************");
-        B b1 = new B(4);
-        b1.overrideThisMethodSecond();
+       // B b1 = new B(4);
+      //  b1.overrideThisMethodSecond();
 
         System.out.println("******A reference check**********");
         A a = new B();

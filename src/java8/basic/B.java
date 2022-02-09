@@ -1,12 +1,12 @@
 package java8.basic;
 
 public class B extends  A{
-    B(){
+    /*B(){
         System.out.println("I am in B");
     }
     B(int i){
         System.out.println("I am in B :"+i);
-    }
+    }*/
     @Override
     public void overrideThisMethod(){
         System.out.println("overrideThisMethod of B");
